@@ -41,8 +41,9 @@ class Queue {
     if(this.size <= 0){
       throw new Error("Queue is empty");
     }
-    let start = this.first;
-    this.first = start.next;
+    let start = this.first.val;
+    console.log("this first value", this.first)
+    this.first = this.first.next;
     this.size--;
     return start;
   }
@@ -50,13 +51,13 @@ class Queue {
   /** peek(): return the value of the first node in the queue. */
 
   peek() {
-
+    return this.first.val;
   }
 
   /** isEmpty(): return true if the queue is empty, otherwise false */
 
   isEmpty() {
-
+    return this.size === 0;
   }
 }
 
